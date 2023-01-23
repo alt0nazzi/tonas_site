@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://unpkg.com/jquery.terminal/js/jquery.terminal.min.js"></script>
+        <link rel="stylesheet" href="https://unpkg.com/jquery.terminal/css/jquery.terminal.min.css"/>
+        <title>_TONAZZI_INC</title>
+    </head>
+    <body>
+        <template id="greetings">
+     _________  ________  ________   ________  ________  ________  ___          ___  ________   ________         
+    |\___   ___\\   __  \|\   ___  \|\   __  \|\_____  \|\_____  \|\  \        |\  \|\   ___  \|\   ____\        
+    \|___ \  \_\ \  \|\  \ \  \\ \  \ \  \|\  \\|___/  /|\|___/  /\ \  \       \ \  \ \  \\ \  \ \  \___|        
+         \ \  \ \ \  \\\  \ \  \\ \  \ \   __  \   /  / /    /  / /\ \  \       \ \  \ \  \\ \  \ \  \           
+          \ \  \ \ \  \\\  \ \  \\ \  \ \  \ \  \ /  /_/__  /  /_/__\ \  \       \ \  \ \  \\ \  \ \  \____  ___ 
+           \ \__\ \ \_______\ \__\\ \__\ \__\ \__\\________\\________\ \__\       \ \__\ \__\\ \__\ \_______\\__\
+            \|__|  \|_______|\|__| \|__|\|__|\|__|\|_______|\|_______|\|__|        \|__|\|__| \|__|\|_______\|__|            
+                                                                                                      
+        </template>
+        <script>
+            /*
+                Alec here--
+                Yes, all possible commands are listed below (but you're ruining all of the fun)
+                If you have any suggestions, feel free to reach out to me and,
+                since you're reading this right now,
+                you're certainly more than capable of that.
+            */
+            $('body').terminal({
+                sqweeker: function() {
+                    this.echo('[[b;green;]ACCEPTED]');
+                    let current_url = window.location.origin;
+                    setTimeout(function(){
+                        window.location.replace(current_url.concat('/sqweeker'));
+                    }, 1200)
+                },
+                alec: function() {
+                    this.echo('[[b;green;]ACCEPTED]');
+                    let current_url = window.location.origin;
+                    setTimeout(function(){
+                        window.location.replace(current_url.concat('/resume'));
+                    }, 1200)
+                }
+            },
+             {
+            greetings: greetings.innerHTML,
+            onCommandNotFound: function() {
+                this.echo('[[b;red;]COMMAND NOT RECOGNIZED.]');
+                this.echo('TRY AGAIN.');
+            }
+            });
+        </script>
+    </body>
+</html>
